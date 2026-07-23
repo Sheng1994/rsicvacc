@@ -8,13 +8,12 @@ The project covers the complete path from instruction decoding and coprocessor e
 
 The current FPGA target is the MicroZed board with the Xilinx Zynq-7020 device.
 
-## 2. Demonstration Video
+## 2. Demonstration
 
-A recorded end-to-end demonstration is provided at the repository root:
+<p align="center">
+  <img src="record.gif" alt="Project Demonstration" width="900">
+</p>
 
-[`record.mov`](record.mov)
-
-The recording shows handwritten-digit input, FPGA execution, prediction results, batch MNIST testing, and runtime performance reporting through the browser interface.
 
 ## 3. System Architecture
 
