@@ -17,6 +17,10 @@ The current FPGA target is the MicroZed board with the Xilinx Zynq-7020 device.
 
 ## 3. System Architecture
 
+<p align="center">
+  <img src="system_block.png" alt="Project Demonstration" width="900">
+</p>
+
 | Layer | Component | Responsibility |
 |---|---|---|
 | Processor | CV32E40X | Executes RV32IM_Zicsr bare-metal software and issues custom neural-network instructions. |
