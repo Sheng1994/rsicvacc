@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1050" viewBox="0 0 1600 1050" role="img" aria-labelledby="title desc">
+  <title id="title">Current MicroZed RISC-V and INT8 MNIST accelerator architecture</title>
+  <desc id="desc">Development tools on macOS generate firmware and FPGA artifacts. The Zynq processing system controls a programmable-logic subsystem containing CV32E40X, instruction ROM, dual-port BRAM, MMIO control, a BRAM-to-AXI DMA bridge, and a ten-output sixteen-lane INT8 accelerator.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F8FAFC"/><stop offset="1" stop-color="#EEF2F7"/></linearGradient>
+    <filter id="shadow" x="-10%" y="-15%" width="120%" height="140%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity=".12"/></filter>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#2563EB"/></marker>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#15803D"/></marker>
+    <marker id="arrowViolet" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#7C3AED"/></marker>
+    <marker id="arrowSlate" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#475569"/></marker>
+    <style>
+      text{font-family:Inter,"SF Pro Display",Arial,sans-serif}.title{font-size:32px;font-weight:750;fill:#0F172A}.subtitle{font-size:16px;fill:#64748B}
+      .section{font-size:15px;font-weight:750;letter-spacing:1.5px;fill:#64748B}.h{font-size:21px;font-weight:750;fill:#0F172A}.body{font-size:16px;fill:#334155}.small{font-size:14px;fill:#64748B}.mono{font:14px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#334155}
+      .panel{fill:#FFFFFF;stroke:#CBD5E1;stroke-width:1.5}.host{fill:#EFF6FF;stroke:#60A5FA;stroke-width:1.5}.ps{fill:#FFF7ED;stroke:#FB923C;stroke-width:1.5}.cpu{fill:#F0FDF4;stroke:#4ADE80;stroke-width:1.5}.mem{fill:#F8FAFC;stroke:#94A3B8;stroke-width:1.5}.acc{fill:#F5F3FF;stroke:#A78BFA;stroke-width:1.5}.mmio{fill:#FFFBEB;stroke:#FBBF24;stroke-width:1.5}
+      .blue{stroke:#2563EB;fill:none;stroke-width:2.5;marker-end:url(#arrowBlue)}.green{stroke:#15803D;fill:none;stroke-width:2.5;marker-end:url(#arrowGreen)}.violet{stroke:#7C3AED;fill:none;stroke-width:2.5;marker-end:url(#arrowViolet)}.slate{stroke:#475569;fill:none;stroke-width:2.5;marker-end:url(#arrowSlate)}
+      .dash{stroke-dasharray:7 6}.divider{stroke:#CBD5E1;stroke-width:1.5}.port{font-size:13px;font-weight:700;fill:#475569}.badge{font-size:12px;font-weight:750;fill:#FFFFFF}
+    </style>
+  </defs>
+  <rect width="1600" height="1050" fill="url(#bg)"/>
+  <text id="titleText" x="70" y="58" class="title">Current RISC-V + INT8 MNIST Accelerator Architecture</text>
+  <text x="70" y="86" class="subtitle">MicroZed XC7Z020 · CV32E40X · shared dual-port BRAM · autonomous 10×16 inference</text>
+
+  <text x="70" y="128" class="section">DEVELOPMENT HOST · macOS</text>
+  <rect x="70" y="145" width="1460" height="145" rx="18" class="panel" filter="url(#shadow)"/>
+  <rect x="100" y="172" width="310" height="90" rx="12" class="host"/>
+  <text x="125" y="204" class="h">Application &amp; dataset</text><text x="125" y="231" class="body">MNIST prepare · INT8 pack · batch UI</text><text x="125" y="252" class="small">Python scripts / browser dashboard</text>
+  <rect x="470" y="172" width="310" height="90" rx="12" class="host"/>
+  <text x="495" y="204" class="h">RISC-V toolchain</text><text x="495" y="231" class="body">C + .insn custom-0 → RV32 ELF</text><text x="495" y="252" class="small">ELF → binary → instruction .memh</text>
+  <rect x="840" y="172" width="310" height="90" rx="12" class="host"/>
+  <text x="865" y="204" class="h">Vivado build</text><text x="865" y="231" class="body">SystemVerilog + XPM → bitstream / XSA</text><text x="865" y="252" class="small">100 MHz implemented design</text>
+  <rect x="1210" y="172" width="290" height="90" rx="12" class="host"/>
+  <text x="1235" y="204" class="h">XSDB / hw_server</text><text x="1235" y="231" class="body">JTAG program · AXI control</text><text x="1235" y="252" class="small">Load BRAM · start · read metrics</text>
+  <path d="M410 217H470" class="blue"/><path d="M780 217H840" class="blue"/><path d="M1150 217H1210" class="blue"/>
+
+  <text x="70" y="338" class="section">MICROZED XC7Z020</text>
+  <rect x="70" y="355" width="315" height="610" rx="20" class="panel" filter="url(#shadow)"/>
+  <text x="100" y="392" class="h">Zynq Processing System</text>
+  <rect x="100" y="420" width="255" height="105" rx="12" class="ps"/><text x="125" y="455" class="h">ARM Cortex-A9</text><text x="125" y="482" class="body">Host-side orchestration</text><text x="125" y="506" class="small">CPU reset · load · launch · poll</text>
+  <rect x="100" y="565" width="255" height="105" rx="12" class="ps"/><text x="125" y="600" class="h">M_AXI_GP0</text><text x="125" y="627" class="mono">0x43C0_0000</text><text x="125" y="650" class="small">PL control / BRAM loader window</text>
+  <rect x="100" y="710" width="255" height="105" rx="12" class="mem"/><text x="125" y="745" class="h">PS DDR</text><text x="125" y="772" class="body">Linux / host data</text><text x="125" y="796" class="small">Direct HP0 DMA path reserved</text>
+  <path d="M227 525V565" class="blue"/><path d="M1355 262V318H227V420" class="blue dash"/>
+
+  <rect x="425" y="355" width="1105" height="610" rx="20" class="panel" filter="url(#shadow)"/>
+  <text x="455" y="392" class="h">Programmable Logic</text>
+
+  <rect x="455" y="420" width="345" height="185" rx="14" class="cpu"/>
+  <text x="480" y="456" class="h">CV32E40X RISC-V Core</text><text x="480" y="484" class="body">RV32IM_Zicsr · machine mode</text>
+  <line x1="480" y1="502" x2="775" y2="502" class="divider"/>
+  <text x="480" y="530" class="body">Firmware control + argmax</text><text x="480" y="555" class="small">Instruction OBI · data OBI</text><text x="480" y="580" class="small">MMIO requests at 0x0000_F000</text>
+
+  <rect x="855" y="420" width="290" height="185" rx="14" class="acc"/>
+  <text x="880" y="456" class="h">CV-X-IF Coprocessor</text><text x="880" y="484" class="body">custom-0 instructions</text>
+  <text x="880" y="515" class="small">DOTP4 · RELU · CLIP8 · MAX4</text><text x="880" y="540" class="small">REQUANT · array commands</text><text x="880" y="578" class="small">issue → commit / kill → result</text>
+  <path d="M800 468H855" class="green"/><path d="M855 558H800" class="green"/>
+
+  <rect x="1200" y="420" width="300" height="185" rx="14" class="mem"/>
+  <text x="1225" y="456" class="h">Instruction ROM</text><text x="1225" y="484" class="body">4 KiB · 32-bit words</text>
+  <text x="1225" y="520" class="small">Initialized from firmware .memh</text><text x="1225" y="545" class="small">Read through instruction OBI</text>
+  <rect x="1225" y="565" width="108" height="24" rx="12" fill="#475569"/><text x="1279" y="582" text-anchor="middle" class="badge">FETCH</text>
+  <path d="M1200 455V405H627V420" class="slate"/>
+
+  <rect x="455" y="650" width="1045" height="55" rx="10" class="mmio"/>
+  <text x="977" y="684" text-anchor="middle" class="h">Data OBI Decode · RAM / Mailbox / MMIO 0x0000_F000</text>
+  <path d="M627 605V650" class="green"/><path d="M355 617H455" class="blue"/>
+
+  <rect x="455" y="750" width="345" height="170" rx="14" class="mem"/>
+  <text x="480" y="786" class="h">64 KiB True Dual-Port BRAM</text>
+  <rect x="480" y="810" width="70" height="27" rx="13" fill="#15803D"/><text x="515" y="829" text-anchor="middle" class="badge">PORT A</text><text x="565" y="829" class="small">RISC-V load / store</text>
+  <rect x="480" y="850" width="70" height="27" rx="13" fill="#2563EB"/><text x="515" y="869" text-anchor="middle" class="badge">PORT B</text><text x="565" y="869" class="small">PS load or DMA burst read</text>
+  <text x="480" y="902" class="small">Image, quantized weights, mailbox, metrics</text>
+
+  <rect x="855" y="750" width="270" height="170" rx="14" class="acc"/>
+  <text x="880" y="786" class="h">BRAM → AXI DMA</text><text x="880" y="816" class="body">Incrementing read bursts</text><text x="880" y="843" class="small">Autonomous 49-tile scheduler</text><text x="880" y="868" class="small">Cache fill + status / counters</text><text x="880" y="899" class="mono">AR / R / RLAST</text>
+
+  <rect x="1180" y="750" width="320" height="170" rx="14" class="acc"/>
+  <text x="1205" y="786" class="h">MNIST INT8 Accelerator</text><text x="1205" y="816" class="body">10 output rows × 16 lanes</text><text x="1205" y="843" class="small">160 useful MACs per array cycle</text><text x="1205" y="868" class="small">Resident weights + activation cache</text><text x="1205" y="899" class="small">10 × signed INT32 accumulators</text>
+
+  <path d="M627 705V750" class="green"/><path d="M990 705V750" class="violet"/>
+  <path d="M800 852H855" class="violet"/><path d="M1125 835H1180" class="violet"/>
+  <path d="M1340 750V728H1090V705" class="violet dash"/>
+
+  <text x="70" y="1010" class="section">LEGEND</text>
+  <line x1="170" y1="1005" x2="225" y2="1005" class="blue"/><text x="240" y="1011" class="small">Host / PS control</text>
+  <line x1="395" y1="1005" x2="450" y2="1005" class="green"/><text x="465" y="1011" class="small">CPU request / result</text>
+  <line x1="645" y1="1005" x2="700" y2="1005" class="violet"/><text x="715" y="1011" class="small">DMA / accelerator data</text>
+  <line x1="930" y1="1005" x2="985" y2="1005" class="slate"/><text x="1000" y="1011" class="small">Instruction fetch</text>
+  <text x="1250" y="1011" class="small">Current deployed path; HP0 direct DDR DMA is future work</text>
+</svg>

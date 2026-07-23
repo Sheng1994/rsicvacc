@@ -1,0 +1,37 @@
+# Host and editor files
+.DS_Store
+**/.DS_Store
+*~
+*.swp
+*.bkp
+._*
+.$*
+
+# Python environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Generated build, simulation, and synthesis outputs
+build/
+obj_dir/
+sim_build/
+*.vcd
+*.fst
+*.wdb
+*.jou
+*.log
+*.str
+*.pb
+*.cache/
+*.runs/
+*.gen/
+*.hw/
+*.ip_user_files/
+.Xil/
+
+# Temporary files
+*.tmp
+*.temp
