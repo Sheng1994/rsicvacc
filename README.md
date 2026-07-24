@@ -8,22 +8,22 @@ The project covers the complete path from instruction decoding and coprocessor e
 
 The current FPGA target is the MicroZed board with the Xilinx Zynq-7020 device.
 
-<p align="center">
-  <img src="AES-Z7MB-7Z020-SOM.png" alt="Project Demonstration" width="900">
+<p align="left">
+  <img src="AES-Z7MB-7Z020-SOM.png" alt="Project Demonstration" width="450">
 </p>
 
 
 ## 2. Demonstration
 
-<p align="center">
-  <img src="record.gif" alt="Project Demonstration" width="450">
+<p align="left">
+  <img src="record.gif" alt="Project Demonstration" width="600">
 </p>
 
 
 ## 3. System Architecture
 
-<p align="center">
-  <img src="system_block.png" alt="Project Demonstration" width="900">
+<p align="left">
+  <img src="system_block.png" alt="Project Demonstration" width="600">
 </p>
 
 | Layer | Component | Responsibility |
