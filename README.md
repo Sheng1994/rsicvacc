@@ -16,7 +16,7 @@ The current FPGA target is the MicroZed board with the Xilinx Zynq-7020 device.
 ## 2. Demonstration
 
 <p align="center">
-  <img src="record.gif" alt="Project Demonstration" width="900">
+  <img src="record.gif" alt="Project Demonstration" width="450">
 </p>
 
 
